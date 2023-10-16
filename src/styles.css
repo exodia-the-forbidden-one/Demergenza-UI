@@ -1,1 +1,65 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,600&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+  /* background: #444; */
+  min-height: 100vh !important;
+  position: relative;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container-fluid {
+  width: 100%;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+
+.d-none{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1400px) {
+  .container {
+    width: 1000px;
+  }
+}
+@media (max-width: 1200px) {
+  .container {
+    width: 800px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+  }
+}
