@@ -1,0 +1,132 @@
+section.footer {
+  background: linear-gradient(#000000df, #333333dd),
+    url(../../../../../assets/bg-1.jpg);
+  position: relative;
+  bottom: 0;
+  padding: 30px 0;
+}
+
+.footer-menu {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-menu-group {
+  flex-shrink: 1;
+}
+
+.footer-menu * {
+  color: #fff;
+}
+
+.footer-menu a.logo {
+  align-self: center;
+}
+
+.footer-menu a.logo img {
+  width: 250px;
+}
+
+.working-hours ul {
+  width: 180px;
+}
+
+.working-hours ul li {
+  font-weight: 200;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3px;
+  font-size: 14px;
+}
+
+.footer-nav ul {
+  margin-top: 50px;
+}
+
+@media (max-width: 1000px) {
+  .footer-menu-group.responsive {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .footer-nav ul {
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 815px) {
+  .footer-menu {
+    justify-content: center;
+  }
+
+  .footer-menu-group {
+    padding: 0 30px;
+  }
+
+  .footer-menu-group.working-hours {
+    margin-top: 50px;
+  }
+  .footer-menu-group.contact {
+    margin-top: 50px;
+  }
+
+  .footer-menu .footer-nav {
+    width: 100%;
+  }
+
+  .footer-menu .footer-nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-menu .footer-menu-group.contact ul li:nth-child(3) {
+    justify-content: flex-end;
+  }
+}
+
+.footer-nav ul li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.contact ul {
+  margin: 20px auto;
+  max-width: 300px;
+}
+
+.contact ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.contact ul li span {
+  margin-left: 21px;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.footer-socials a {
+  margin: 0 8px;
+}
+
+.copyright {
+  padding: 0 15px;
+}
+.copyright > hr {
+  border-color: #ffffff50;
+  margin-bottom: 20px;
+}
+.copyright > p {
+  color: #fff;
+}
