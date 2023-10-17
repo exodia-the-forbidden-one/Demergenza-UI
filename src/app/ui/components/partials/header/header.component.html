@@ -1,0 +1,27 @@
+<section class="header container-fluid">
+  <div class="container">
+    <div class="navbar">
+      <a href="" class="logo"
+        ><img src="assets/logo-demergenza.png" alt="demergenza" height="120px"
+      /></a>
+      <ul>
+        <i class="fa-solid fa-xmark" (click)="toggleNavbar()"></i>
+        <li><a [routerLink]="['home']">ANA SAYFA</a></li>
+        <li><a [routerLink]="['test']">MENÜ</a></li>
+        <li><a [routerLink]="['gallery']">HAKKIMIZDA</a></li>
+        <li><a [routerLink]="['contact']">İLETİŞİM</a></li>
+      </ul>
+      <i class="d-none fa-solid fa-bars" (click)="toggleNavbar()"></i>
+      <div class="contact-wrapper">
+        <a href="tel:123-45-67">
+          <img
+            class="phone-icon"
+            src="assets/phone.svg"
+            alt="numara"
+            width="46px"
+          />123-45-67
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

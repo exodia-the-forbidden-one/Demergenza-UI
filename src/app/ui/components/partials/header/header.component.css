@@ -1,0 +1,142 @@
+.container-fluid {
+  position: absolute;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 20px 15px;
+}
+
+.container > .navbar {
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.container > .navbar > ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: .25s all !important;
+}
+
+.fa-xmark {
+  display: none;
+}
+
+.container > .navbar > ul > li > a {
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 36px;
+  font-family: "Amatic SC", sans-serif;
+  transition: 0.5s all;
+}
+
+.container > .navbar > ul li:nth-child(1n + 3) {
+  border-left: 1px dashed #fff;
+}
+
+.container > .navbar > ul > li > a:hover {
+  color: #f97e20;
+}
+
+a {
+  color: #fff;
+  font-family: "Amatic SC", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+}
+a:hover {
+  cursor: pointer;
+}
+
+.phone-icon {
+  filter: invert(50%) sepia(50%) saturate(17%) hue-rotate(235deg)
+    brightness(200%) contrast(200%);
+}
+
+.contact-wrapper a {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 800px) {
+  .container > .navbar > ul {
+    visibility: hidden;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(#333333, #333333da),
+      url("../../../../../assets/bg-2.jpg");
+    z-index: 1;
+    padding-bottom: 40px;
+    transform: translateY(-100%);
+  }
+
+  .container > .navbar > ul.active {
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .contact-wrapper > a {
+    display: none;
+  }
+
+  .fa-xmark {
+    display: inline-block;
+    font-size: 40px;
+    color: #fff;
+    margin: 30px 0;
+  }
+
+  .container > .navbar > ul li:nth-child(1n + 3) {
+    border-top: 1px dashed #fff;
+    border-left: none;
+  }
+
+  .container > .navbar > ul > li > a {
+    line-height: 70px;
+  }
+
+  .container > .navbar > a.logo {
+    order: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container > .navbar > a.logo > img {
+    height: 150px;
+  }
+
+  .container > .navbar > .fa-solid.fa-bars {
+    order: 1;
+    display: inline-block;
+    color: #fff;
+    font-size: 36px;
+    flex: 1;
+    margin-left: 40px;
+  }
+
+  /* .container > .navbar > .contact-wrapper {
+    order: 3;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  } */
+}
