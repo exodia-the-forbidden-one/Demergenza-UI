@@ -1,5 +1,6 @@
 .container-fluid {
   position: absolute;
+  z-index: 1;
 }
 
 .container {
@@ -81,7 +82,6 @@ a:hover {
     min-height: 100vh;
     background: linear-gradient(#333333, #333333da),
       url("../../../../../assets/bg-2.jpg");
-    z-index: 1;
     padding-bottom: 40px;
     transform: translateY(-100%);
   }
