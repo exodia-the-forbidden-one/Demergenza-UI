@@ -81,7 +81,7 @@ a:hover {
     width: 100vw;
     min-height: 100vh;
     background: linear-gradient(#333333, #333333da),
-      url("../../../../../assets/bg-2.jpg");
+      url("../../../../../assets/img/bg-2.jpg");
     padding-bottom: 40px;
     transform: translateY(-100%);
   }

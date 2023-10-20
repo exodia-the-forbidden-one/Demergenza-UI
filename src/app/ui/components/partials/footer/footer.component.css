@@ -1,6 +1,6 @@
 section.footer {
   background: linear-gradient(#000000df, #333333dd),
-    url(../../../../../assets/bg-1.jpg);
+    url(../../../../../assets/img/bg-1.jpg);
   position: relative;
   bottom: 0;
   padding: 30px 0;
@@ -31,7 +31,7 @@ section.footer {
 }
 
 .working-hours ul {
-  width: 180px;
+  width: 220px;
 }
 
 .working-hours ul li {
