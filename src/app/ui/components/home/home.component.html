@@ -1,0 +1,52 @@
+<section id="hero-wrapper">
+  <p-carousel
+    #heroCarousel
+    [value]="heroItems"
+    [numVisible]="1"
+    [numScroll]="1"
+    [circular]="false"
+    [autoplayInterval]="10000"
+    [showNavigators]="false"
+    [showIndicators]="false"
+  >
+    <ng-template
+      class="p-0 w-full h-full relative"
+      let-heroItems
+      pTemplate="item"
+      class="w-full h-full relative"
+    >
+      <div class="relative">
+        <img
+          src="{{ heroItems.imageSrc }}"
+          [alt]="heroItems.alt"
+          class="image-hero w-full h-full shadow-2 relative left-0 top-0"
+          height="100%"
+        />
+        <div
+          class="hero-content-wrapper absolute"
+          [ngStyle]="{ top: heroItems.top }"
+        >
+          <div [style.margin-left]="heroItems.left" class="hero-content">
+            <img
+              *ngIf="heroItems.titleSrc != undefined"
+              src="assets/img/logo-title.png"
+              [alt]="heroItems.alt"
+              style="filter: drop-shadow(5px 5px 10px #000000)"
+              [ngStyle]="{ width: heroItems.imageWidth }"
+            />
+            <p>
+              {{ heroItems.subtitle }}
+            </p>
+          </div>
+          <div
+            *ngIf="screenWidth$ | async as screenWidth"
+            class="mt-5 text-center md:text-left"
+            [style.padding-left]="screenWidth < 576 ? 0 : heroItems?.left"
+          >
+            <p-button label="Menü" [rounded]="true" severity="help"></p-button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</section>

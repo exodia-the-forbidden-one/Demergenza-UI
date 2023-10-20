@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UiComponent } from './ui.component';
 import { RouterModule } from '@angular/router';
+
+import { CarouselModule } from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
+
 import { HomeComponent } from './components/home/home.component';
+import { UiComponent } from './ui.component';
 import { HeaderComponent } from './components/partials/header/header.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 
@@ -17,6 +21,8 @@ import { FooterComponent } from './components/partials/footer/footer.component';
   ],
   imports: [
     CommonModule,
+    CarouselModule,
+    ButtonModule,
     RouterModule.forChild([
       {
         path: '', component: UiComponent, children: [
@@ -26,7 +32,7 @@ import { FooterComponent } from './components/partials/footer/footer.component';
       }
     ]),
   ],
-  exports:[
+  exports: [
     UiComponent,
     HomeComponent,
     HeaderComponent,
