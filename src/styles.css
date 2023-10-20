@@ -1,30 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,600&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
-
 /* similar as demergenza logo*/
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@1,8..60,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@1,8..60,700&display=swap");
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Nunito Sans", sans-serif;
-}
+@import url("assets/css/reset.css");
 
 body {
-  /* background: #444; */
   min-height: 100vh !important;
   position: relative;
 }
 
 li {
   list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-  font-weight: bold;
 }
 
 .container-fluid {
