@@ -25,7 +25,7 @@ export class AuthService {
           this.setToken(res.token);
           let tokenPayload = this.decodedToken();
           this.userStorage.setUserNameForStore(tokenPayload.unique_name)
-          this.router.navigate(['admin', 'dashboard']);
+          this.router.navigate(['admin']);
         },
         error: (err) => {
           console.log(err)
