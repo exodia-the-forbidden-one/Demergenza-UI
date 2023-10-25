@@ -8,15 +8,18 @@ import { PasswordModule } from 'primeng/password';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 
-import { authGuard } from '../guards/auth.guard';
 import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { authGuard } from '../guards/auth.guard';
 import { AdminComponent } from './admin.component';
+
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,
@@ -26,6 +29,7 @@ import { AdminComponent } from './admin.component';
     ReactiveFormsModule,
     ToastModule,
     RouterModule.forChild([
+      { path: '', component: DashboardComponent, pathMatch: 'prefix', canActivate: [authGuard] },
       { path: 'login', component: LoginComponent, pathMatch: 'prefix', canActivate: [authGuard] }
     ])
   ]
