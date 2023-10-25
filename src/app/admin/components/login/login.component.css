@@ -1,0 +1,18 @@
+.card{
+    color: #fff;
+    max-width: 15rem;
+    margin-top: 120px;
+}
+
+.logo{
+    width: 15rem;
+}
+
+.logo img{
+    object-fit: cover;
+    width: 100%;
+}
+
+::ng-deep .p-input-icon-right > .p-inputtext {
+    padding-right: 0.75rem;
+}

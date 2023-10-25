@@ -1,0 +1,29 @@
+<p-toast></p-toast>
+<div class="grid w-full h-full justify-content-center">
+  <div class="card">
+    <form [formGroup]="loginForm">
+      <div class="logo">
+        <img src="assets/img/logo-title.png" alt="" />
+      </div>
+      <div class="flex text-white font-demergenza justify-content-end">
+        <h3 class="mt-0">admin</h3>
+      </div>
+      <div class="field">
+        <label for="firstname1">Username</label>
+        <input formControlName="username" pInputText type="text" />
+      </div>
+      <div class="field">
+        <label for="lastname1">Password</label>
+        <p-password
+          formControlName="password"
+          class="w-full"
+          [feedback]="false"
+          [toggleMask]="true"
+        ></p-password>
+      </div>
+      <div class="field">
+        <p-button (click)="submit()" label="Giriş" severity="primary"></p-button>
+      </div>
+    </form>
+  </div>
+</div>
