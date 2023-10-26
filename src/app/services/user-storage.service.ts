@@ -5,8 +5,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UserStorageService {
-  private userName$ = new BehaviorSubject<string>("");
-  private role$ = new BehaviorSubject<string>("");
+  public userName$ = new BehaviorSubject<string>("");
+  public role$ = new BehaviorSubject<string>("");
   
   constructor() { }
   
