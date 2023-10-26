@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { MessageService } from 'primeng/api';
+import { MessageService, ConfirmationService } from 'primeng/api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,7 +23,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
     UiModule,
     HttpClientModule
   ],
-  providers: [MessageService,
+  providers: [MessageService, ConfirmationService,
     ApiService,
     {
       provide: HTTP_INTERCEPTORS,

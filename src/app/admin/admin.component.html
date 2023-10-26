@@ -1,2 +1,4 @@
-<app-sidebar *ngIf="!isLoginComponent()"></app-sidebar>
-<router-outlet></router-outlet>
+<div class="admin-wrapper" [ngClass]="isLoginComponent() ? '' : 'flex'  " >
+  <app-sidebar *ngIf="!isLoginComponent()"></app-sidebar>
+  <router-outlet></router-outlet>
+</div>

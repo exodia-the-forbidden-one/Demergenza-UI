@@ -1,1 +1,42 @@
-<p>sidebar works!</p>
+<p-toast></p-toast>
+<div class="sidebar-wrapper">
+  <div class="sidebar-header">
+    <a class="logo" routerLink="/admin">
+      <img src="assets/img/logo-title.png" alt="" />
+    </a>
+  </div>
+  <div class="sidebar-body">
+    <ul>
+      <li>
+        <button
+          pButton
+          type="button"
+          class="w-full p-button-rounded p-button-text text-gray-300 hover:bg-bluegray-700 py-3"
+          rounded="true"
+          pRipple
+          routerLink="/admin"
+        >
+          <i class="pi pi-home"></i>
+          <span class="sidebar-link-text">Ana Sayfa</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="sidebar-footer">
+    <div class="admin flex justify-content-between align-items-center">
+      <span> <i class="pi pi-user mr-2"></i>{{ admin }}</span
+      ><button
+        pButton
+        (click)="logoutDialog()"
+        class="p-button-text text-gray-300 hover:bg-bluegray-700"
+        pRipple
+      >
+        <i class="pi pi-sign-out"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="card flex justify-content-center gap-2">
+  <p-toast></p-toast>
+  <p-confirmDialog [style]="{ width: '50vw' }"></p-confirmDialog>
+</div>
