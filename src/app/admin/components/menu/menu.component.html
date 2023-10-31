@@ -1,0 +1,159 @@
+<p-toast></p-toast>
+<!-- update category dialog -->
+<p-dialog
+  #updateCategoryDialog
+  header="Düzenle {{ category == null ? '' : category.name }}"
+  [(visible)]="updateCategoryDialogVisible"
+  [style]="{ width: '50vw' }"
+  (onHide)="hideDialogHandler()"
+>
+  <div class="card">
+    <form [formGroup]="updateCategoryForm">
+      <div class="field">
+        <input
+          placeholder="Kategori ismi"
+          type="text"
+          pInputText
+          formControlName="updateCategoryName"
+          [value]="category == null ? '' : category.name"
+        />
+      </div>
+      <div class="field">
+        <p-fileUpload
+          #updateCategoryImageUploadElement
+          mode="basic"
+          chooseLabel="Resim seç"
+          [maxFileSize]="1000000"
+          [customUpload]="true"
+          (onSelect)="isImageChanged = true"
+          (uploadHandler)="updateCategoryImageUploadEvent($event)"
+        ></p-fileUpload>
+      </div>
+      <div class="field">
+        <button
+          pButton
+          pRipple
+          (click)="updateCategory()"
+          class="p-button-help"
+          label="Kaydet"
+        ></button>
+      </div>
+    </form>
+  </div>
+</p-dialog>
+<!-- add category dialog -->
+<p-dialog
+  #addCategoryDialog
+  (onHide)="hideDialogHandler()"
+  header="Kategori Ekle"
+  [(visible)]="addCategoryDialogVisible"
+  [style]="{ width: '50vw' }"
+>
+  <div class="card">
+    <form [formGroup]="addCategoryForm">
+      <div class="field">
+        <input
+          placeholder="Kategori ismi"
+          type="text"
+          pInputText
+          formControlName="addCategoryName"
+        />
+      </div>
+      <div class="field">
+        <p-fileUpload
+          #addCategoryImageUploadElement
+          mode="basic"
+          chooseLabel="Resim seç"
+          [maxFileSize]="1000000"
+          [customUpload]="true"
+          (uploadHandler)="addCategoryImageUploadEvent($event)"
+        ></p-fileUpload>
+      </div>
+      <div class="field">
+        <button
+          pButton
+          pRipple
+          (click)="addCategory()"
+          class="p-button-help"
+          label="Ekle"
+        ></button>
+      </div>
+    </form>
+  </div>
+</p-dialog>
+<section class="menu-wrapper p-5">
+  <div class="card">
+    <p-table
+      [value]="categories"
+      dataKey="name"
+      [tableStyle]="{ 'min-width': '60rem' }"
+    >
+      <ng-template pTemplate="header">
+        <tr>
+          <th style="width: 5rem"></th>
+          <th pSortableColumn="name">
+            Kategori Adı <p-sortIcon field="name"></p-sortIcon>
+          </th>
+          <th>Kategori Görsel</th>
+          <th>
+            <button
+              (click)="showAddCategoryDialog()"
+              pButton
+              pRipple
+              label="Kategori ekle"
+            >
+              <i class="pi pi-plus mr-2"></i>
+            </button>
+          </th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-category let-expanded="expanded">
+        <tr>
+          <td>
+            <button
+              type="button"
+              pButton
+              pRipple
+              [pRowToggler]="category"
+              class="p-button-text p-button-rounded p-button-plain"
+              [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
+            ></button>
+          </td>
+          <td>{{ category.name }}</td>
+          <td>
+            <img
+              [src]="category.image"
+              [alt]="category.name"
+              width="80"
+              class="shadow-4"
+            />
+          </td>
+          <td>
+            <button
+              pButton
+              pRipple
+              (click)="showUpdateCategoryDialog(category)"
+              label="Düzenle"
+              class="p-button-help"
+              icon="pi pi-sliders-v"
+            ></button>
+          </td>
+          <td>
+            <button
+              pButton
+              pRipple
+              (click)="removeCategoryDialog(category.id)"
+              label="Kategoriyi Sil"
+              class="p-button-danger"
+            >
+              <i class="pi pi-minus mr-2"></i>
+            </button>
+          </td>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="rowexpansion" let-category>
+      </ng-template>
+    </p-table>
+  </div>
+</section>
