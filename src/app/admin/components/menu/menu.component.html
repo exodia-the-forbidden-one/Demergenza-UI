@@ -81,6 +81,140 @@
     </form>
   </div>
 </p-dialog>
+<!-- add menu dialog -->
+<p-dialog
+  #addMenuDialog
+  (onHide)="hideDialogHandler()"
+  header="Menü Ekle"
+  [(visible)]="addMenuDialogVisible"
+  [style]="{ width: '50vw' }"
+>
+  <div class="card">
+    <form [formGroup]="addMenuForm">
+      <div class="field">
+        <div class="flex flex-column align-items-start">
+          <label for="addMenuName">Menü Adı: </label>
+          <input
+            id="addMenuName"
+            placeholder="Menü İsmi"
+            type="text"
+            pInputText
+            formControlName="addMenuName"
+          />
+        </div>
+      </div>
+      <div class="field">
+        <div class="flex flex-column align-items-start">
+          <label for="addMenuIngredients">İçindekiler: </label>
+          <p-chips
+            id="addMenuIngredients"
+            formControlName="addMenuIngredients"
+            separator=","
+            placeholder="İçindekiler"
+          ></p-chips>
+        </div>
+      </div>
+      <div class="field">
+        <div class="flex flex-column align-items-start">
+          <label for="addMenuPriceInput">Fiyat: </label>
+          <p-inputNumber
+            id="addMenuPriceInput"
+            formControlName="addMenuPriceInput"
+          >
+          </p-inputNumber>
+        </div>
+      </div>
+      <div class="field">
+        <p-fileUpload
+          #addMenuImageUploadElement
+          mode="basic"
+          placeholder="asd"
+          chooseLabel="Resim seç"
+          [maxFileSize]="1000000"
+          [customUpload]="true"
+          (uploadHandler)="addMenuImageUploadEvent($event)"
+        ></p-fileUpload>
+      </div>
+      <div class="field">
+        <button
+          pButton
+          pRipple
+          (click)="addMenu()"
+          class="p-button-help"
+          label="Ekle"
+        ></button>
+      </div>
+    </form>
+  </div>
+</p-dialog>
+<!-- modify menu dialog -->
+<p-dialog
+  #updateMenuDialog
+  (onHide)="hideDialogHandler()"
+  header="Düzenle {{ menu == null ? '' : menu.name }}"
+  [(visible)]="updateMenuDialogVisible"
+  [style]="{ width: '50vw' }"
+>
+  <div class="card">
+    <form [formGroup]="updateMenuForm">
+      <div class="field">
+        <div class="flex flex-column align-items-start">
+          <label for="updateMenuName">Menü Adı: </label>
+          <input
+            id="updateMenuName"
+            placeholder="Menü adı"
+            type="text"
+            pInputText
+            formControlName="updateMenuName"
+          />
+        </div>
+      </div>
+      <div class="field">
+        <div class="flex flex-column align-items-start">
+          <label for="updateMenuIngredients">İçindekiler: </label>
+          <p-chips
+            *ngIf="menu != null"
+            id="updateMenuIngredients"
+            formControlName="updateMenuIngredients"
+            separator=","
+            placeholder="İçindekiler"
+          ></p-chips>
+        </div>
+      </div>
+      <div class="field">
+        <div class="flex flex-column align-items-start">
+          <label for="updateMenuPriceInput">Fiyat: </label>
+          <p-inputNumber
+            id="updateMenuPriceInput"
+            formControlName="updateMenuPriceInput"
+          >
+          </p-inputNumber>
+        </div>
+      </div>
+      <div class="field">
+        <p-fileUpload
+          #updateMenuImageUploadElement
+          mode="basic"
+          placeholder="asd"
+          chooseLabel="Resim seç"
+          [maxFileSize]="1000000"
+          [customUpload]="true"
+          (uploadHandler)="updateMenuImageUploadEvent($event)"
+        ></p-fileUpload>
+      </div>
+      <div class="field">
+        <button
+          pButton
+          pRipple
+          (click)="updateMenu(menu.id)"
+          class="p-button-help"
+          label="Güncelle"
+        ></button>
+      </div>
+    </form>
+  </div>
+</p-dialog>
+<!-- category table -->
 <section class="menu-wrapper p-5">
   <div class="card">
     <p-table
@@ -100,10 +234,9 @@
               (click)="showAddCategoryDialog()"
               pButton
               pRipple
-              label="Kategori ekle"
-            >
-              <i class="pi pi-plus mr-2"></i>
-            </button>
+              class="p-button-info border-circle p-button-text"
+              icon="pi pi-plus"
+            ></button>
           </th>
           <th></th>
         </tr>
@@ -120,7 +253,9 @@
               [icon]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"
             ></button>
           </td>
-          <td>{{ category.name }}</td>
+          <td>
+            <p>{{ category.name }}</p>
+          </td>
           <td>
             <img
               [src]="category.image"
@@ -134,9 +269,8 @@
               pButton
               pRipple
               (click)="showUpdateCategoryDialog(category)"
-              label="Düzenle"
-              class="p-button-help"
-              icon="pi pi-sliders-v"
+              class="p-button-info border-circle p-button-text"
+              icon="pi pi-pencil"
             ></button>
           </td>
           <td>
@@ -144,15 +278,82 @@
               pButton
               pRipple
               (click)="removeCategoryDialog(category.id)"
-              label="Kategoriyi Sil"
-              class="p-button-danger"
-            >
-              <i class="pi pi-minus mr-2"></i>
-            </button>
+              class="p-button-danger border-circle p-button-text"
+              icon="pi pi-times"
+            ></button>
           </td>
         </tr>
       </ng-template>
+      <!-- menu table -->
       <ng-template pTemplate="rowexpansion" let-category>
+        <tr>
+          <td colspan="6">
+            <div class="p-3">
+              <p-table [value]="category.menus" dataKey="name">
+                <ng-template pTemplate="header">
+                  <tr>
+                    <th pSortableColumn="name">
+                      Menü Adı <p-sortIcon field="name"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="menuImage">
+                      Menü Görsel <p-sortIcon field="menuImage"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="ingredients">
+                      İçindekiler <p-sortIcon field="ingredients"></p-sortIcon>
+                    </th>
+                    <th pSortableColumn="amount">
+                      Fiyat <p-sortIcon field="amount"></p-sortIcon>
+                    </th>
+                    <th>
+                      <button
+                        pButton
+                        (click)="showAddMenuDialog(category.id)"
+                        class="p-button-info p-button-text border-circle"
+                        icon="pi pi-plus"
+                      ></button>
+                    </th>
+                    <th></th>
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-menu>
+                  <tr>
+                    <td>{{ menu.name }}</td>
+                    <td><img [src]="menu.image" alt="" width="80px" /></td>
+                    <td>{{ menu.ingredients }}</td>
+                    <td>{{ menu.price }} TL</td>
+                    <td>
+                      <button
+                        pButton
+                        icon="pi pi-pencil"
+                        class="border-circle p-button-help p-button-text"
+                        (click)="showUpdateMenuDialog(menu)"
+                      ></button>
+                    </td>
+                    <td>
+                      <button
+                        (click)="removeMenuDialog(menu.id)"
+                        pButton
+                        icon="pi pi-times"
+                        class="border-circle p-button-danger p-button-text"
+                      ></button>
+                    </td>
+                    <!-- <td>
+                      <p-tag
+                        [value]="order.status"
+                        [severity]="getStatusSeverity(order.status)"
+                      ></p-tag>
+                    </td> -->
+                  </tr>
+                </ng-template>
+                <ng-template pTemplate="emptymessage">
+                  <tr>
+                    <td colspan="6">Bu kategoriye ait bir menü yok!</td>
+                  </tr>
+                </ng-template>
+              </p-table>
+            </div>
+          </td>
+        </tr>
       </ng-template>
     </p-table>
   </div>
