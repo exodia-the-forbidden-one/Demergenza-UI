@@ -30,11 +30,10 @@ export class TokenInterceptor implements HttpInterceptor {
         if (err instanceof HttpErrorResponse) {
           if (err.status === 401) {
             this.messageService.add({ severity: 'warn', summary: 'Hata', detail: 'Oturum süresi doldu. Tekrar giriş yapın!' })
-            this.router.navigate(['admin', 'login'])
+            this.auth.signOut();
           }
           else if (err.status === 0) {
-            localStorage.removeItem("token")
-            this.router.navigate(['admin', 'login'])
+            this.auth.signOut();
             return throwError(() => new Error("Sunucu hatası!"));
           }
         }
