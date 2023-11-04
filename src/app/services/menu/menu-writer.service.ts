@@ -11,15 +11,15 @@ export class MenuWriterService {
 
 
   addCategory(formData: FormData): Observable<any> {
-    return this.api.post("menu/addcategory", formData);
+    return this.api.post("category/addcategory", formData);
   }
 
   updateCategory(id: string, formData: FormData): Observable<any> {
-    return this.api.post("menu/updatecategory/" + id, formData);
+    return this.api.post("category/updatecategory/" + id, formData);
   }
 
   deleteCategory(id: string): Observable<any> {
-    return this.api.delete("menu/deletecategory/" + id);
+    return this.api.delete("category/deletecategory/" + id);
   }
 
   addMenu(formData: FormData): Observable<any> {

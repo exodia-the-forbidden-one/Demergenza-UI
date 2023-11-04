@@ -10,10 +10,10 @@ export class MenuReaderService {
   constructor(private api: ApiService) { }
 
   getAllCategories(): Observable<any> {
-    return this.api.get("menu/getallcategories");
+    return this.api.get("category/getallcategories");
   }
 
   getCategoryById(id: string): Observable<any> {
-    return this.api.get("menu/getcategorybyid/" + id);
+    return this.api.get("category/getcategorybyid/" + id);
   }
 }
