@@ -1,0 +1,57 @@
+section#menu {
+  padding-top: 160px;
+}
+
+.grid {
+  background: #dbe2ef;
+  /* background: #dbe2ef; */
+  color: #fff;
+}
+
+.grid img {
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  transition: 0.4s all;
+}
+
+.col {
+  padding: 10px;
+  overflow: hidden;
+}
+
+.grid .category > .relative {
+  overflow: hidden;
+}
+
+.grid .category:hover img {
+  transform: scale(1.1);
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+::ng-deep .p-chip {
+  font-size: 12px;
+  margin-top: 8px;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.ingredients{
+  font-size: 13px;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    padding: 0;
+  }
+
+  section#menu{
+    padding-top: 135px;
+  }
+}

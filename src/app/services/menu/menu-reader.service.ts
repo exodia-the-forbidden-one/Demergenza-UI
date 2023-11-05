@@ -16,4 +16,8 @@ export class MenuReaderService {
   getCategoryById(id: string): Observable<any> {
     return this.api.get("category/getcategorybyid/" + id);
   }
+
+  getAllMenusByCategoryName(name: string): Observable<any> {
+    return this.api.get("menu/getallmenusbycategoryname/" + name);
+  }
 }
