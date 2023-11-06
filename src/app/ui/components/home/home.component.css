@@ -85,3 +85,31 @@ section.hidden {
     opacity: 0;
   }
 }
+
+.dishes-wrapper {
+  padding-top: 500px;
+}
+
+.dish-content {
+  border: 1px dashed #cdaf80;
+}
+
+.divider-shape {
+  width: 100%;
+  height: 25px;
+  margin: 25px 0;
+  background: url(../../../../assets/img/divider-shape2.png) center no-repeat;
+}
+
+@media (min-width: 580px) {
+  .dish-panel {
+    height: 390px;
+  }
+}
+.dish-image {
+  overflow: hidden;
+}
+
+.dish-image img {
+  height: 390px;
+}

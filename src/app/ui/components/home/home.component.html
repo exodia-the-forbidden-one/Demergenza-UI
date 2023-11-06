@@ -43,10 +43,136 @@
             class="mt-5 text-center md:text-left"
             [style.padding-left]="screenWidth < 576 ? 0 : heroItems?.left"
           >
-            <p-button label="Menü" [rounded]="true" severity="help"></p-button>
+            <p-button
+              label="Menü"
+              [rounded]="true"
+              severity="help"
+              routerLink="/menu"
+            ></p-button>
           </div>
         </div>
       </div>
     </ng-template>
   </p-carousel>
+</section>
+<section id="dishes">
+  <div class="dishes-wrapper px-4 py-5 bg-white">
+    <div class="grid shadow-4">
+      <div class="dish-panel col-12 lg:col-6">
+        <div class="grid">
+          <div class="p-3 col-12 sm:col-6">
+            <div class="dish-content h-full">
+              <div class="dish-content-header">
+                <h3 class="text-center">4 Peynirli Pizza</h3>
+              </div>
+              <div class="divider-shape"></div>
+              <div class="dish-content-body">
+                <p class="text-500 px-4 text-center text-sm line-height-3">
+                  <i
+                    >"Damak zevkinizi şımartacak bir lezzet yolculuğuna çıkmaya
+                    hazır olun! Eşsiz dört peynirli pizzamız, peynir severlerin
+                    rüyalarını süsleyen bir eser. Bu pizza, dört farklı peynirin
+                    mükemmel uyumunu tabağınıza taşıyor. Seçkin mozzarella,
+                    aromatik parmesan, harika chedar ve tulum peyniri, her bir
+                    ısırıkta damağınızda zengin tatlar bırakıyor."</i
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="p-0 col-12 sm:col-6">
+            <div class="dish-image flex justify-content-center">
+              <img src="../../../../assets/img/four-chese.avif" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dish-panel col-12 lg:col-6">
+        <div class="grid">
+          <div class="p-3 col-12 sm:col-6 sm:flex-order-1 lg:flex-order-0">
+            <div class="dish-content h-full">
+              <div class="dish-content-header">
+                <h3 class="text-center">Pizza Margharita</h3>
+              </div>
+              <div class="divider-shape"></div>
+              <div class="dish-content-body">
+                <p class="text-500 px-4 text-center text-sm line-height-3">
+                  <i>
+                    "Margherita pizzamız, çıtır tabanı, taze domates sosu,
+                    eriyen mozzarella peyniri ve fesleğen yaprakları ile sade ve
+                    otantik bir lezzet sunar. İtalyan mutfağının klasik bir
+                    parçasını deneyimleyin."
+                  </i>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="p-0 col-12 sm:col-6 sm:flex-order-0 lg:flex-order-1">
+            <div class="dish-image flex justify-content-center">
+              <img src="../../../../assets/img/margharita.webp" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dish-panel col-12 lg:col-6">
+        <div class="grid">
+          <div class="p-0 col-12 sm:col-6 flex-order-1 lg:flex-order-0">
+            <div class="dish-image flex justify-content-center">
+              <img src="../../../../assets/img/beef-pizza.jpg" alt="" />
+            </div>
+          </div>
+          <div class="p-3 col-12 sm:col-6 flex-order-0 lg:flex-order-1">
+            <div class="dish-content h-full">
+              <div class="dish-content-header">
+                <h3 class="text-center">Beef Vitello Pizza</h3>
+              </div>
+              <div class="divider-shape"></div>
+              <div class="dish-content-body">
+                <p class="text-500 px-4 text-center text-sm line-height-3">
+                  <i
+                    >"Beef Vitello Pizza, lezzetin şaheseri. Özel Demergenza
+                    sosu, eriyen mozzarella, lezzetli dana bonfile dilimleri,
+                    aromatik mantarlar, canlı renkli biberler, közlenmiş domates
+                    ve patlıcanın harmanlandığı bir şölen.. Bu özel pizza, her
+                    ısırıkta zengin ve otantik lezzetleriyle sizi
+                    büyüleyecek."</i
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dish-panel col-12 lg:col-6">
+        <div class="grid">
+          <div class="p-0 col-12 sm:col-6 flex-order-1 sm:flex-order-0">
+            <div class="dish-image flex justify-content-center">
+              <img src="../../../../assets/img/chicken-pizza.jpg" alt="" />
+            </div>
+          </div>
+          <div class="p-3 col-12 sm:col-6 flex-order-0 sm:flex-order-1">
+            <div class="dish-content h-full">
+              <div class="dish-content-header">
+                <h3 class="text-center">Chicken Pizza</h3>
+              </div>
+              <div class="divider-shape"></div>
+              <div class="dish-content-body">
+                <p class="text-500 px-4 text-center text-sm line-height-3">
+                  <i
+                    >"Chicken Pizza, özenle seçilmiş tavuk bonfile, zengin
+                    mozzarella, renkli biberler ve tatlı mısırın eşsiz uyumuyla
+                    damağınızda festival yaratır. Özel Demergenza Pizza
+                    Sosumuzun derin lezzeti ile kuru domates ve mantarın
+                    aromatik dokunuşları, her lokmada sizi cezbedecek. Bu göz
+                    alıcı pizza, tavuk severler için doyumsuz bir ziyafet vaat
+                    ediyor."</i
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
