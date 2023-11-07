@@ -129,3 +129,28 @@ section.hidden {
 .dish-image img {
   height: 390px;
 }
+
+.grid{
+  margin: 0;
+}
+
+section#contact {
+  padding-top: 80px;
+}
+
+.contact-adress{
+  background: #ff954440;
+}
+
+.contact-phone{
+  background-color: #ff954440;
+}
+
+.icon-contact {
+  font-size: 26px;
+  padding: 14px;
+  border: 2px solid #ff9544;
+  border-radius: 50%;
+  color: #ff9544;
+  background: #fff;
+}
