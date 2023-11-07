@@ -13,6 +13,7 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import { FooterComponent } from './components/partials/footer/footer.component';
 import { CategoryComponent } from './components/category/category.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 
@@ -23,7 +24,8 @@ import { MenuComponent } from './components/menu/menu.component';
     HeaderComponent,
     FooterComponent,
     CategoryComponent,
-    MenuComponent
+    MenuComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +39,8 @@ import { MenuComponent } from './components/menu/menu.component';
           { path: '', redirectTo: 'home', pathMatch: 'full' },
           { path: 'home', component: HomeComponent },
           { path: 'menu', component: CategoryComponent },
-          { path: 'menu/:categoryName', component: MenuComponent }
+          { path: 'menu/:categoryName', component: MenuComponent },
+          { path: 'iletisim', component: ContactComponent }
         ]
       }
     ]),

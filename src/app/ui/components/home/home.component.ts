@@ -17,33 +17,30 @@ export class HomeComponent implements OnInit {
     this.heroItems = [
       {
         imageSrc: '../../../../assets/img/hero-pizza.jpg',
-        imageWidth: '370px',
+        imageWidth: '270px',
         alt: 'Description for Image 1',
         title: 'Title 1',
         titleSrc: './../../../assets/img/logo-title.jpg',
         subtitle: 'Lezzetli İtalyan pizzalarımız, Napolinin sıcak esintilerini sofranıza getiriyor. Taze malzemeler ve nefis soslarla dolu pizza keyfi sizi bekliyor!',
         top: '270px',
-        left: window.innerWidth < 500 ? '10%' : '10%',
       },
       {
         imageSrc: '../../../../assets/img/hero-hamburger.jpg',
-        imageWidth: '250px',
+        imageWidth: '270px',
         alt: 'Description for Image 2',
         title: 'Title 2',
-        titleSrc: undefined,
+        titleSrc: "./../../../assets/img/logo-title.jpg",
         subtitle: 'Sıradan hamburgerlerin ötesinde, en sevdiğiniz lezzetleri buluşturuyoruz. Özel baharatlı etimiz ve çeşitli garnitürlerle unutulmaz bir hamburger deneyimi sunuyoruz.',
         top: '270px',
-        left: window.innerWidth < 500 ? '10%' : '10%',
       },
       {
         imageSrc: '../../../../assets/img/hero-pasta.jpg',
-        imageWidth: '250px',
+        imageWidth: '270px',
         alt: 'Description for Image 3',
         title: 'Title 3',
-        titleSrc: undefined,
+        titleSrc: "./../../../assets/img/logo-title.jpg",
         subtitle: 'Taze makarnalarımız, özenle hazırlanmış soslar ve enfes malzemelerle buluşuyor. Makarna keyfini bir üst seviyeye taşımak için hazır mısınız?',
         top: '270px',
-        left: window.innerWidth < 500 ? '10%' : '20%',
       }
 
     ]

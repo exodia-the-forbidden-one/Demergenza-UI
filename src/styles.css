@@ -18,6 +18,10 @@ li {
   list-style-type: none;
 }
 
+a{
+  text-decoration: none;
+}
+
 .font-demergenza {
   font-family:'source serif 4' , serif;
 }

@@ -93,6 +93,8 @@ a:hover {
   .container > .navbar > ul.active {
     visibility: visible;
     transform: translateY(0);
+    margin: 0;
+    padding: 0;
   }
   
   .contact-wrapper > a {
@@ -124,7 +126,7 @@ a:hover {
   }
 
   .container > .navbar > a.logo > img {
-    height: 150px;
+    height: 100px;
   }
 
   .container > .navbar > .fa-solid.fa-bars {
@@ -135,13 +137,4 @@ a:hover {
     flex: 1;
     margin-left: 40px;
   }
-
-  
-  /* .container > .navbar > .contact-wrapper {
-    order: 3;
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  } */
 }

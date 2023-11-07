@@ -1,20 +1,21 @@
 <section class="footer container-fluid">
   <div class="container-md">
     <div class="footer-menu">
-      <a class="logo"> <img src="assets/img/logo-title.png" alt="logo" /></a>
+      <a class="logo mt-3 lg:mt-0">
+        <img src="assets/img/logo-title.png" alt="logo"
+      /></a>
       <div class="footer-menu-group responsive">
         <div class="footer-nav">
           <ul>
-            <li><a routerLink="['home']">ANA SAYFA</a></li>
-            <li><a routerLink="['menu']">MENÜ</a></li>
-            <li><a href="['sss']">SIKÇA SORULAN SORULAR</a></li>
-            <li><a href="['gallery']">GALERİ</a></li>
-            <li><a href="['contact']">İLETİŞİM</a></li>
+            <li><a [routerLink]="['home']">ANA SAYFA</a></li>
+            <li><a [routerLink]="['menu']">MENÜ</a></li>
+            <li><a [routerLink]="">HAKKIMIZDA</a></li>
+            <li><a [routerLink]="['iletisim']">İLETİŞİM</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-menu-group working-hours">
-        <h3>ÇALIŞMA SAATLERİ</h3>
+        <h3 class="text-center md:text-left">ÇALIŞMA SAATLERİ</h3>
         <br />
         <ul>
           <li>PAZARTESİ <span>11.00 - 03.00</span></li>
@@ -27,7 +28,7 @@
         </ul>
       </div>
       <div class="footer-menu-group contact">
-        <h3>İLETİŞİM</h3>
+        <h3 class="text-center md:text-left">İLETİŞİM</h3>
         <ul>
           <li>TELEFON: 7355608</li>
           <li>

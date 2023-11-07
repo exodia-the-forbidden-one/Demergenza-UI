@@ -10,18 +10,18 @@
       <ul>
         <i class="fa-solid fa-xmark" (click)="toggleNavbar()"></i>
         <li>
-          <a [routerLink]="['home']" routerLinkActive="link-active">ANA SAYFA</a>
+          <a (click)="toggleNavbar()" [routerLink]="['home']" routerLinkActive="link-active">ANA SAYFA</a>
         </li>
         <li>
-          <a [routerLink]="['menu']" routerLinkActive="link-active">MENÜ</a>
+          <a (click)="toggleNavbar()" [routerLink]="['menu']" routerLinkActive="link-active">MENÜ</a>
         </li>
         <li>
-          <a [routerLink]="['gallery']" routerLinkActive="link-active"
+          <a (click)="toggleNavbar()" [routerLink]="['gallery']" routerLinkActive="link-active"
             >HAKKIMIZDA</a
           >
         </li>
         <li>
-          <a [routerLink]="['contact']" routerLinkActive="link-active"
+          <a (click)="toggleNavbar()" [routerLink]="['iletisim']" routerLinkActive="link-active"
             >İLETİŞİM</a
           >
         </li>

@@ -6,6 +6,15 @@ section.footer {
   padding: 30px 0;
 }
 
+ul {
+  padding: 0;
+}
+
+.footer-nav ul a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
 .footer-menu {
   display: flex;
   align-items: flex-start;
@@ -32,6 +41,7 @@ section.footer {
 
 .working-hours ul {
   width: 220px;
+  padding: 0;
 }
 
 .working-hours ul li {
@@ -44,6 +54,7 @@ section.footer {
 
 .footer-nav ul {
   margin-top: 50px;
+  padding: 0;
 }
 
 @media (max-width: 1000px) {
@@ -59,6 +70,12 @@ section.footer {
   }
 }
 
+@media (max-width: 619px) {
+  .footer-menu-group.working-hours {
+    margin-top: 50px;
+  }
+}
+
 @media (max-width: 815px) {
   .footer-menu {
     justify-content: center;
@@ -68,9 +85,6 @@ section.footer {
     padding: 0 30px;
   }
 
-  .footer-menu-group.working-hours {
-    margin-top: 50px;
-  }
   .footer-menu-group.contact {
     margin-top: 50px;
   }
