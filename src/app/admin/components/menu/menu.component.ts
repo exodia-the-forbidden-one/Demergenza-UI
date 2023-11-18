@@ -8,6 +8,7 @@ import { Category, Menu } from '../../../models/menu.model';
 import { AuthService } from 'src/app/services/auth.service';
 import { MenuReaderService } from '../../../services/menu/menu-reader.service';
 import { MenuWriterService } from '../../../services/menu/menu-writer.service';
+import { UserStorageService } from 'src/app/services/user-storage.service';
 
 @Component({
   selector: 'app-menu',
@@ -39,9 +40,10 @@ export class MenuComponent implements OnInit {
     private fb: FormBuilder,
     private menuReader: MenuReaderService,
     private menuWriter: MenuWriterService,
-    private auth: AuthService,
     private confirmationService: ConfirmationService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private userStorage: UserStorageService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -133,7 +135,7 @@ export class MenuComponent implements OnInit {
       const formData = new FormData();
       formData.append('CategoryName', this.addCategoryForm.value.addCategoryName);
       formData.append('CategoryImage', this.addCategoryForm.value.addCategoryImage, this.addCategoryForm.value.addCategoryImage.name);
-      formData.append("adminUsername", this.auth.getUserName())
+      formData.append("adminUsername", this.authService.getUserName())
 
       this.menuWriter.addCategory(formData).subscribe({
         next: () => {
@@ -165,7 +167,7 @@ export class MenuComponent implements OnInit {
         formData.append('categoryImage', this.updateCategoryForm.value.updateCategoryImage, this.updateCategoryForm.value.updateCategoryImage.name);
       }
       formData.append('CategoryName', this.updateCategoryForm.value.updateCategoryName);
-      formData.append("adminUsername", this.auth.getUserName())
+      formData.append("adminUsername", this.authService.getUserName())
       this.menuWriter.updateCategory(this.category.id, formData).subscribe({
         next: () => {
           this.getCategories();
@@ -197,11 +199,15 @@ export class MenuComponent implements OnInit {
       const formData = new FormData();
       formData.append('MenuName', this.addMenuForm.value.addMenuName);
       formData.append('MenuImage', this.addMenuForm.value.addMenuImage, this.addMenuForm.value.addMenuImage.name);
-      formData.append("adminUsername", this.auth.getUserName());
       formData.append("menuIngredients", this.addMenuForm.value.addMenuIngredients);
       formData.append('MenuPrice', this.addMenuForm.value.addMenuPriceInput);
       formData.append('CategoryId', this.categoryId);
-
+      this.userStorage.getUserNameFromStore().subscribe(
+        admin => {
+          const adminFromAuth = this.authService.getUserName();
+          formData.append('adminUsername', admin || adminFromAuth);
+        }
+      )
       this.menuWriter.addMenu(formData).subscribe({
         next: () => {
           this.getCategories();
@@ -231,11 +237,11 @@ export class MenuComponent implements OnInit {
       const formData = new FormData();
       formData.append('MenuName', this.updateMenuForm.value.updateMenuName);
       formData.append('MenuImage', this.updateMenuForm.value.updateMenuImage);
-      formData.append("adminUsername", this.auth.getUserName());
+      formData.append("adminUsername", this.authService.getUserName());
       formData.append("menuIngredients", this.updateMenuForm.value.updateMenuIngredients);
       formData.append('MenuPrice', this.updateMenuForm.value.updateMenuPriceInput);
       formData.append('CategoryId', this.categoryId);
-      formData.append('id',menuId);
+      formData.append('id', menuId);
 
       this.menuWriter.updateMenu(formData).subscribe({
         next: () => {

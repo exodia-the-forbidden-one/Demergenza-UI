@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Category } from './category.model';
-import { ApiService } from 'src/app/services/api.service';
 import { MenuReaderService } from 'src/app/services/menu/menu-reader.service';
 
 @Component({
@@ -12,12 +11,13 @@ export class CategoryComponent {
   public Categories: Category[];
 
   constructor(private menuReader: MenuReaderService) {
-    menuReader.getAllCategories().subscribe({
+  }
+
+  ngOnInit() {
+    this.menuReader.getAllCategories().subscribe({
       next: (data) => {
         this.Categories = data
       }
     })
-  }
-  ngOnInit() {
   }
 }

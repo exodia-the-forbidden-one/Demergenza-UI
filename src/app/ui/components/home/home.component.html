@@ -1,54 +1,20 @@
 <section id="hero-wrapper">
-  <p-carousel
-    #heroCarousel
-    [value]="heroItems"
-    [numVisible]="1"
-    [numScroll]="1"
-    [circular]="false"
-    [autoplayInterval]="10000"
-    [showNavigators]="false"
-    [showIndicators]="false"
-  >
-    <ng-template
-      class="p-0 w-full h-full relative"
-      let-heroItems
-      pTemplate="item"
-      class="w-full h-full relative"
-    >
+  <p-carousel #heroCarousel [value]="heroItems" [numVisible]="1" [numScroll]="1" [circular]="false"
+    [autoplayInterval]="10000" [showNavigators]="false" [showIndicators]="false">
+    <ng-template class="p-0 w-full h-full relative" let-heroItems pTemplate="item" class="w-full h-full relative">
       <div class="relative">
-        <img
-          src="{{ heroItems.imageSrc }}"
-          [alt]="heroItems.alt"
-          class="image-hero w-full h-full shadow-2 relative left-0 top-0"
-          height="100%"
-        />
-        <div
-          class="hero-content-wrapper absolute"
-          [ngStyle]="{ top: heroItems.top }"
-        >
+        <img src="{{ heroItems.imageSrc }}" [alt]="heroItems.alt"
+          class="image-hero w-full h-full shadow-2 relative left-0 top-0" height="100%" />
+        <div class="hero-content-wrapper absolute" [ngStyle]="{ top: heroItems.top }">
           <div [style.margin-left]="heroItems.left" class="hero-content">
-            <img
-              *ngIf="heroItems.titleSrc != undefined"
-              src="assets/img/logo-title.png"
-              [alt]="heroItems.alt"
-              style="filter: drop-shadow(5px 5px 10px #000000)"
-              [ngStyle]="{ width: heroItems.imageWidth }"
-            />
+            <img *ngIf="heroItems.titleSrc != undefined" src="assets/img/logo-title.png" [alt]="heroItems.alt"
+              style="filter: drop-shadow(5px 5px 10px #000000)" [ngStyle]="{ width: heroItems.imageWidth }" />
             <p class="text-center sm:text-left px-3 sm:px-0">
               {{ heroItems.subtitle }}
             </p>
           </div>
-          <div
-            *ngIf="screenWidth$ | async as screenWidth"
-            class="mt-5 text-center md:text-left"
-            [style.padding-left]="screenWidth < 576 ? 0 : heroItems?.left"
-          >
-            <p-button
-              label="Menü"
-              [rounded]="true"
-              severity="help"
-              routerLink="/menu"
-            ></p-button>
+          <div class="mt-5 text-center md:text-left">
+            <p-button label="Menü" [rounded]="true" severity="help" routerLink="/menu"></p-button>
           </div>
         </div>
       </div>
@@ -68,14 +34,12 @@
               <div class="divider-shape"></div>
               <div class="dish-content-body">
                 <p class="text-500 px-4 text-center text-sm line-height-3">
-                  <i
-                    >"Damak zevkinizi şımartacak bir lezzet yolculuğuna çıkmaya
+                  <i>"Damak zevkinizi şımartacak bir lezzet yolculuğuna çıkmaya
                     hazır olun! Eşsiz dört peynirli pizzamız, peynir severlerin
                     rüyalarını süsleyen bir eser. Bu pizza, dört farklı peynirin
                     mükemmel uyumunu tabağınıza taşıyor. Seçkin mozzarella,
                     aromatik parmesan, harika chedar ve tulum peyniri, her bir
-                    ısırıkta damağınızda zengin tatlar bırakıyor."</i
-                  >
+                    ısırıkta damağınızda zengin tatlar bırakıyor."</i>
                 </p>
               </div>
             </div>
@@ -129,14 +93,12 @@
               <div class="divider-shape"></div>
               <div class="dish-content-body">
                 <p class="text-500 px-4 text-center text-sm line-height-3">
-                  <i
-                    >"Beef Vitello Pizza, lezzetin şaheseri. Özel Demergenza
+                  <i>"Beef Vitello Pizza, lezzetin şaheseri. Özel Demergenza
                     sosu, eriyen mozzarella, lezzetli dana bonfile dilimleri,
                     aromatik mantarlar, canlı renkli biberler, közlenmiş domates
                     ve patlıcanın harmanlandığı bir şölen.. Bu özel pizza, her
                     ısırıkta zengin ve otantik lezzetleriyle sizi
-                    büyüleyecek."</i
-                  >
+                    büyüleyecek."</i>
                 </p>
               </div>
             </div>
@@ -158,15 +120,13 @@
               <div class="divider-shape"></div>
               <div class="dish-content-body">
                 <p class="text-500 px-4 text-center text-sm line-height-3">
-                  <i
-                    >"Chicken Pizza, özenle seçilmiş tavuk bonfile, zengin
+                  <i>"Chicken Pizza, özenle seçilmiş tavuk bonfile, zengin
                     mozzarella, renkli biberler ve tatlı mısırın eşsiz uyumuyla
                     damağınızda festival yaratır. Özel Demergenza Pizza
                     Sosumuzun derin lezzeti ile kuru domates ve mantarın
                     aromatik dokunuşları, her lokmada sizi cezbedecek. Bu göz
                     alıcı pizza, tavuk severler için doyumsuz bir ziyafet vaat
-                    ediyor."</i
-                  >
+                    ediyor."</i>
                 </p>
               </div>
             </div>
@@ -177,7 +137,7 @@
   </div>
 </section>
 <section id="contact" class="surface-100">
-  <div class="contact-header mb-6">
+  <div class="hidden block contact-header mb-6">
     <h2 class="text-center text-700 mb-5">İLETİŞİM</h2>
     <p class="text-center">
       Düşüncelerinizi önemsiyoruz. İstek, öneri ve şikayetlerinizi bizimle
@@ -186,8 +146,7 @@
   </div>
   <div class="contact-wrapper grid justify-content-center">
     <div
-      class="contact-adress col-10 sm:col-5 md:col-3 flex border-1 border-400 flex-column p-4 shadow-8 border-round-sm"
-    >
+      class="hidden transition-delay-200 contact-adress col-10 sm:col-5 md:col-3 flex border-1 border-400 flex-column p-4 border-round-sm">
       <div class="contact-adress-header flex flex-column align-items-center">
         <i class="pi pi-map-marker icon-contact"></i>
         <h3>ADRES</h3>
@@ -199,19 +158,17 @@
       </div>
     </div>
     <div
-      class="contact-email col-10 sm:col-5 md:col-3 flex border-400 flex-column p-4 shadow-4 border-round-sm"
-    >
+      class="hidden transition-delay-400 contact-email col-10 sm:col-5 md:col-3 flex border-400 flex-column p-4 shadow-4 border-round-sm">
       <div class="contact-email-header flex flex-column align-items-center">
         <i class="pi pi-envelope icon-contact"></i>
         <h3>E-POSTA</h3>
       </div>
       <div class="contact-email-body">
-        <p class="text-center">gaben@valvesoftware.com</p>
+        <p class="text-center"> gaben&#64;valvesoftware.com </p>
       </div>
     </div>
     <div
-      class="contact-phone col-10 sm:col-5 md:col-3 flex border-1 border-400 flex-column p-4 border-round-sm"
-    >
+      class="hidden transition-delay-500 contact-phone col-10 sm:col-5 md:col-3 flex border-1 border-400 flex-column p-4 border-round-sm">
       <div class="contact-phone-header flex flex-column align-items-center">
         <i class="pi pi-phone icon-contact"></i>
         <h3>TELEFON</h3>
@@ -224,12 +181,7 @@
   <div class="map w-full">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d203.76457913313666!2d-106.64921490007023!3d35.200658179360644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87227143b14c9061%3A0x8cf8a57fa4d05dfb!2s12100%20Coors%20Rd%2C%20Albuquerque%2C%20NM%2087114%2C%20USA!5e0!3m2!1sen!2str!4v1699304492636!5m2!1sen!2str"
-      width="100%"
-      height="450px"
-      style="border: 0"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-    ></iframe>
+      width="100%" height="450px" style="border: 0" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>

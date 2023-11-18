@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 import { MessageService, ConfirmationService } from 'primeng/api';
 
@@ -26,7 +27,11 @@ import { MenuWriterService } from './services/menu/menu-writer.service';
     HttpClientModule
   ],
   providers: [MessageService, ConfirmationService,
-    ApiService, MenuWriterService,MenuReaderService,
+    {
+      provide: LocationStrategy,
+      useClass: PathLocationStrategy
+    },
+    ApiService, MenuWriterService, MenuReaderService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

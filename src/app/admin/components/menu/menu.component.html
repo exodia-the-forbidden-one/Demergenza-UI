@@ -8,7 +8,7 @@
   (onHide)="hideDialogHandler()"
 >
   <div class="card">
-    <form [formGroup]="updateCategoryForm">
+    <form [formGroup]="updateCategoryForm" name="updateCategoryForm">
       <div class="field">
         <input
           placeholder="Kategori ismi"
@@ -90,13 +90,12 @@
   [style]="{ width: '50vw' }"
 >
   <div class="card">
-    <form [formGroup]="addMenuForm">
+    <form [formGroup]="addMenuForm" name="addMenuForm">
       <div class="field">
         <div class="flex flex-column align-items-start">
           <label for="addMenuName">Menü Adı: </label>
           <input
             id="addMenuName"
-            placeholder="Menü İsmi"
             type="text"
             pInputText
             formControlName="addMenuName"
@@ -106,12 +105,12 @@
       <div class="field">
         <div class="flex flex-column align-items-start">
           <label for="addMenuIngredients">İçindekiler: </label>
-          <p-chips
+          <input
+            pInputText
+            type="text"
             id="addMenuIngredients"
             formControlName="addMenuIngredients"
-            separator=","
-            placeholder="İçindekiler"
-          ></p-chips>
+          />
         </div>
       </div>
       <div class="field">
@@ -156,7 +155,7 @@
   [style]="{ width: '50vw' }"
 >
   <div class="card">
-    <form [formGroup]="updateMenuForm">
+    <form [formGroup]="updateMenuForm" name="updateMenuForm">
       <div class="field">
         <div class="flex flex-column align-items-start">
           <label for="updateMenuName">Menü Adı: </label>
@@ -172,13 +171,12 @@
       <div class="field">
         <div class="flex flex-column align-items-start">
           <label for="updateMenuIngredients">İçindekiler: </label>
-          <p-chips
-            *ngIf="menu != null"
+          <input
             id="updateMenuIngredients"
+            pInputText
+            type="text"
             formControlName="updateMenuIngredients"
-            separator=","
-            placeholder="İçindekiler"
-          ></p-chips>
+          />
         </div>
       </div>
       <div class="field">
@@ -218,6 +216,7 @@
 <section class="menu-wrapper p-5">
   <div class="card">
     <p-table
+    responsiveLayout="stack" [breakpoint]="'960px'"
       [value]="categories"
       dataKey="name"
       [tableStyle]="{ 'min-width': '60rem' }"

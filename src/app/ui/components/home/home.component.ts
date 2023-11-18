@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-
 
 @Component({
   selector: 'app-home',
@@ -51,27 +49,14 @@ export class HomeComponent implements OnInit {
   responsiveOptions: any[] = [
   ];
 
-  screenWidthSubject: BehaviorSubject<number> = new BehaviorSubject<number>(window.innerWidth);
-
-  get screenWidth$(): Observable<number> {
-    return this.screenWidthSubject.asObservable();
-  }
-
   ngOnInit(): void {
-
-    this.screenWidth = window.innerWidth;
-
-    window.addEventListener('resize', () => {
-      this.screenWidthSubject.next(window.innerWidth);
-    })
 
     const hiddenElements = document.querySelectorAll(".hidden")
     hiddenElements.forEach(el => this.observer.observe(el))
   }
 
-  observer = new IntersectionObserver((entries) => {
+  observer: IntersectionObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      console.log(entry)
       if (entry.isIntersecting) {
         entry.target.classList.add("show")
       }
