@@ -1,6 +1,6 @@
 <div class="grid w-full h-full justify-content-center">
   <div class="card">
-    <form [formGroup]="loginForm">
+    <form [formGroup]="loginForm" (keyup.enter)="submit()">
       <div class="logo">
         <img src="assets/img/logo-title.png" alt="" />
       </div>
@@ -13,12 +13,7 @@
       </div>
       <div class="field">
         <label for="lastname1">Password</label>
-        <p-password
-          formControlName="password"
-          class="w-full"
-          [feedback]="false"
-          [toggleMask]="true"
-        ></p-password>
+        <p-password formControlName="password" class="w-full" [feedback]="false" [toggleMask]="true"></p-password>
       </div>
       <div class="field">
         <p-button (click)="submit()" label="Giriş" severity="primary"></p-button>

@@ -1,6 +1,6 @@
 <section id="hero-wrapper">
   <p-carousel #heroCarousel [value]="heroItems" [numVisible]="1" [numScroll]="1" [circular]="false"
-    [autoplayInterval]="10000" [showNavigators]="false" [showIndicators]="false">
+    [autoplayInterval]="6000" [showNavigators]="false" [showIndicators]="false">
     <ng-template class="p-0 w-full h-full relative" let-heroItems pTemplate="item" class="w-full h-full relative">
       <div class="relative">
         <img src="{{ heroItems.imageSrc }}" [alt]="heroItems.alt"

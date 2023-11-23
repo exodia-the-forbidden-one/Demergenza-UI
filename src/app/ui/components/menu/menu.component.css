@@ -46,6 +46,10 @@ h3 {
   word-wrap: break-word;
 }
 
+.card{
+  min-height: 136px;
+}
+
 @media (max-width: 768px) {
   .grid {
     padding: 0;

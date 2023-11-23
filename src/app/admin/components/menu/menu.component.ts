@@ -33,8 +33,9 @@ export class MenuComponent implements OnInit {
   addMenuForm: FormGroup;
   updateCategoryForm: FormGroup;
   updateMenuForm: FormGroup;
-  isImageChanged: boolean = false
+  isImageChanged: boolean = false;
   categoryId: string;
+  adminUserName: string = "";
 
   constructor(
     private fb: FormBuilder,
@@ -47,7 +48,12 @@ export class MenuComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    this.userStorage.getUserNameFromStore().subscribe(
+      admin => {
+        const adminFromAuth = this.authService.getUserName();
+        this.adminUserName = admin || adminFromAuth;
+      }
+    )
     this.getCategories();
 
     this.addCategoryForm = this.fb.group({
@@ -135,7 +141,7 @@ export class MenuComponent implements OnInit {
       const formData = new FormData();
       formData.append('CategoryName', this.addCategoryForm.value.addCategoryName);
       formData.append('CategoryImage', this.addCategoryForm.value.addCategoryImage, this.addCategoryForm.value.addCategoryImage.name);
-      formData.append("adminUsername", this.authService.getUserName())
+      formData.append("adminUsername", this.adminUserName)
 
       this.menuWriter.addCategory(formData).subscribe({
         next: () => {
@@ -198,7 +204,7 @@ export class MenuComponent implements OnInit {
 
       const formData = new FormData();
       formData.append('MenuName', this.addMenuForm.value.addMenuName);
-      formData.append('MenuImage', this.addMenuForm.value.addMenuImage, this.addMenuForm.value.addMenuImage.name);
+      if (this.addMenuForm.value.addMenuImage) formData.append('MenuImage', this.addMenuForm.value.addMenuImage, this.addMenuForm.value.addMenuImage.name);
       formData.append("menuIngredients", this.addMenuForm.value.addMenuIngredients);
       formData.append('MenuPrice', this.addMenuForm.value.addMenuPriceInput);
       formData.append('CategoryId', this.categoryId);

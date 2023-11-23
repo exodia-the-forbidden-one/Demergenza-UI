@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: .25s all !important;
+  transition: .10s all !important;
 }
 
 .fa-xmark {
@@ -87,12 +87,12 @@ a:hover {
     background: linear-gradient(#333333, #333333da),
       url("../../../../../assets/img/bg-2.jpg");
     padding-bottom: 40px;
-    transform: translateY(-100%);
+    transform: translateX(-100%);
   }
 
   .container > .navbar > ul.active {
     visibility: visible;
-    transform: translateY(0);
+    transform: translateX(0);
     margin: 0;
     padding: 0;
   }

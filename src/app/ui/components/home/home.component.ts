@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Carousel } from 'primeng/carousel';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ export class HomeComponent implements OnInit {
    *
    */
   constructor() {
+    Carousel.prototype.onTouchMove = () => { };
     this.heroItems = [
       {
         imageSrc: '../../../../assets/img/hero-pizza.jpg',
