@@ -14,6 +14,7 @@ import { DialogModule } from 'primeng/dialog';
 import { FileUploadModule } from 'primeng/fileupload';
 import { ChipsModule } from 'primeng/chips';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 import { authGuard } from '../guards/auth.guard';
 import { LoginComponent } from './components/login/login.component';
@@ -45,8 +46,10 @@ import { MenuComponent } from './components/menu/menu.component';
     ChipsModule,
     FormsModule,
     InputNumberModule,
+    InputTextareaModule,
     RouterModule.forChild([
-      { path: '', component: DashboardComponent, pathMatch: 'prefix', canActivate: [authGuard] },
+      // { path: '', component: DashboardComponent, pathMatch: 'prefix', canActivate: [authGuard] },
+      { path: '', redirectTo: '/admin/menu', pathMatch: 'full'},
       { path: 'login', component: LoginComponent, pathMatch: 'prefix', canActivate: [authGuard] },
       { path: 'menu', component: MenuComponent, pathMatch: 'prefix', canActivate: [authGuard] }
     ])

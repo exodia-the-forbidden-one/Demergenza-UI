@@ -27,12 +27,12 @@ section#menu {
   transform: scale(1.1);
 }
 
-h3 {
+/* h3.menu-name {
   padding: 0;
-  margin: 0;
+  margin-bottom:8px;
   font-weight: 600;
-  font-size: 1rem;
-}
+  font-size: 1.25rem;
+} */
 
 ::ng-deep .p-chip {
   font-size: 12px;
@@ -42,7 +42,7 @@ h3 {
 }
 
 .ingredients{
-  font-size: 13px;
+  font-size: 15px;
   word-wrap: break-word;
 }
 

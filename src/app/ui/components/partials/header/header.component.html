@@ -1,12 +1,7 @@
 <section class="header container-fluid">
   <div class="container">
     <div class="navbar">
-      <a href="" class="logo"
-        ><img
-          src="assets/img/logo-demergenza.png"
-          alt="demergenza"
-          height="120px"
-      /></a>
+      <a href="" class="logo"><img src="assets/img/logo-demergenza.png" alt="demergenza" height="120px" /></a>
       <ul>
         <i class="fa-solid fa-xmark" (click)="toggleNavbar()"></i>
         <li>
@@ -16,25 +11,16 @@
           <a (click)="toggleNavbar()" [routerLink]="['menu']" routerLinkActive="link-active">MENÜ</a>
         </li>
         <li>
-          <a (click)="toggleNavbar()" [routerLink]="['gallery']" routerLinkActive="link-active"
-            >HAKKIMIZDA</a
-          >
+          <a (click)="toggleNavbar()" [routerLink]="['gallery']" routerLinkActive="link-active">HAKKIMIZDA</a>
         </li>
         <li>
-          <a (click)="toggleNavbar()" [routerLink]="['iletisim']" routerLinkActive="link-active"
-            >İLETİŞİM</a
-          >
+          <a (click)="toggleNavbar()" [routerLink]="['iletisim']" routerLinkActive="link-active">İLETİŞİM</a>
         </li>
       </ul>
       <i class="d-none fa-solid fa-bars" (click)="toggleNavbar()"></i>
       <div class="contact-wrapper">
-        <a href="tel:123-45-67">
-          <img
-            class="phone-icon"
-            src="assets/img/phone.svg"
-            alt="numara"
-            width="46px"
-          />123-45-67
+        <a href="tel:+905011368652">
+          <img class="phone-icon" src="assets/img/phone.svg" alt="tel no" width="46px" />0501 136 8652
         </a>
       </div>
     </div>

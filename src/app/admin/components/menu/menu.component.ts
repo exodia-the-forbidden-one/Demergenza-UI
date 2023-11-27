@@ -68,14 +68,14 @@ export class MenuComponent implements OnInit {
 
     this.addMenuForm = this.fb.group({
       addMenuName: ['', Validators.required],
-      addMenuIngredients: ['', Validators.required],
+      addMenuIngredients: [''],
       addMenuPriceInput: ['', Validators.required],
       addMenuImage: new FormControl(),
     });
 
     this.updateMenuForm = this.fb.group({
       updateMenuName: ['', Validators.required],
-      updateMenuIngredients: ['', Validators.required],
+      updateMenuIngredients: [''],
       updateMenuPriceInput: ['', Validators.required],
       updateMenuImage: new FormControl(),
     });

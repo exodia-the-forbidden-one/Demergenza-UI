@@ -1,5 +1,6 @@
 .sidebar-wrapper {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 280px;
   background-image: linear-gradient(60deg, #29323c 0%, #2f3844 100%);
   color: #e0e0e0;
@@ -25,6 +26,7 @@
 
 .sidebar-body {
   padding: 0 15px;
+  flex-grow: 1;
 }
 
 h2 {
@@ -42,8 +44,8 @@ ul {
 }
 
 .sidebar-footer {
-  position: relative;
-  margin-top: auto;
+  position: sticky;
+  bottom: 0;
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -52,4 +54,8 @@ ul {
   outline: 0 none;
   outline-offset: 0px;
   box-shadow: none;
+}
+
+.link-active {
+  background: #3a434e;
 }

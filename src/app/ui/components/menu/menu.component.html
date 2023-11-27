@@ -13,13 +13,13 @@
         <img *ngIf="Menu.image" class="border-round-sm" src="{{ Menu.image }}" alt="{{ Menu.name }}" height="120px" />
         <div class="ml-3 flex flex-column text-black-alpha-90 w-full">
           <div class="flex flex-column w-full">
-            <h3>
+            <h3 class="m-0 my-2 text-xl">
               {{ Menu.name }}
             </h3>
             <div class="ingredients">{{ Menu.ingredients }}</div>
           </div>
           <div class="price mt-auto mb-2">
-            <div class="text-xl font-bold text-orange-500">{{ Menu.price }}</div>
+            <div class="text-xl font-bold text-orange-500">{{ Menu.price + " TL"}}</div>
           </div>
         </div>
       </div>
