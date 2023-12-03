@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Category, Menu } from "src/app/models/menu.model"
-import { MenuReaderService } from 'src/app/services/menu/menu-reader.service';
+import { MenuReaderService } from 'src/app/services/Repositories/menu-reader.service';
 
 @Component({
   selector: 'app-menu',

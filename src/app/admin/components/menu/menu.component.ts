@@ -6,8 +6,8 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 
 import { Category, Menu } from '../../../models/menu.model';
 import { AuthService } from 'src/app/services/auth.service';
-import { MenuReaderService } from '../../../services/menu/menu-reader.service';
-import { MenuWriterService } from '../../../services/menu/menu-writer.service';
+import { MenuReaderService } from '../../../services/Repositories/menu-reader.service';
+import { MenuWriterService } from '../../../services/Repositories/menu-writer.service';
 import { UserStorageService } from 'src/app/services/user-storage.service';
 
 @Component({

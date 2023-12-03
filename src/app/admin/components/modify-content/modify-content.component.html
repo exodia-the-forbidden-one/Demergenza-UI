@@ -1,0 +1,21 @@
+<div class="flex">
+    <div class="card m-4">
+        <p-fieldset legend="Hakkımızda">
+            <form [formGroup]="updateAboutUsForm">
+                <div class="field-grid mb-3">
+                    <p-fileUpload #updateAboutUsImageUploadElement mode="basic" chooseLabel="Resim seç"
+                        [maxFileSize]="100000000" [customUpload]="true" (onSelect)="isImageChanged = true"
+                        (uploadHandler)="updateAboutUsImageUploadEvent($event)"></p-fileUpload>
+                </div>
+                <div class="field grid">
+                    <div class="col">
+                        <textarea rows="15" cols="45" pInputTextarea value="AboutUs.textContent"
+                            formControlName="aboutUsTextContent" placeholder="Hakkımızda İçeriği..."></textarea>
+                    </div>
+                </div>
+                <p-button label="Kaydet" severity="help" (onClick)="updateAboutUs()"></p-button>
+            </form>
+
+        </p-fieldset>
+    </div>
+</div>

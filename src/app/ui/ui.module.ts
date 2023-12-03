@@ -14,6 +14,7 @@ import { FooterComponent } from './components/partials/footer/footer.component';
 import { CategoryComponent } from './components/category/category.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 
@@ -25,7 +26,8 @@ import { ContactComponent } from './components/contact/contact.component';
     FooterComponent,
     CategoryComponent,
     MenuComponent,
-    ContactComponent
+    ContactComponent,
+    AboutUsComponent
   ],
   imports: [
     CommonModule,
@@ -36,11 +38,11 @@ import { ContactComponent } from './components/contact/contact.component';
     RouterModule.forChild([
       {
         path: '', children: [
-          { path: '', redirectTo: 'home', pathMatch: 'full' },
-          { path: 'home', component: HomeComponent },
+          { path: '', component: HomeComponent },
           { path: 'menu', component: CategoryComponent },
           { path: 'menu/:categoryName', component: MenuComponent },
-          { path: 'iletisim', component: ContactComponent }
+          { path: 'iletisim', component: ContactComponent },
+          { path: 'hakkimizda', component: AboutUsComponent }
         ]
       }
     ]),

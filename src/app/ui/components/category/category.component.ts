@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Category } from './category.model';
-import { MenuReaderService } from 'src/app/services/menu/menu-reader.service';
+import { MenuReaderService } from 'src/app/services/Repositories/menu-reader.service';
 
 @Component({
   selector: 'app-category',

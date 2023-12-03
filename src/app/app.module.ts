@@ -12,9 +12,8 @@ import { AppComponent } from './app.component';
 import { UiModule } from './ui/ui.module';
 import { ApiService } from './services/api.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
-import { MenuReaderService } from './services/menu/menu-reader.service';
-import { MenuWriterService } from './services/menu/menu-writer.service';
-
+import { MenuReaderService } from './services/Repositories/menu-reader.service';
+import { MenuWriterService } from './services/Repositories/menu-writer.service';
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,0 +1,9 @@
+section.about-us {
+    padding-top: 160px;
+    background: url(../../../../assets/img/bg.jpg);
+}
+
+.about-us-wrapper{
+    display: flex;
+    flex-direction: column;
+}
