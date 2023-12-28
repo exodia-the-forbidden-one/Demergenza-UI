@@ -2,15 +2,19 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+import { environment } from 'src/environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiService {
 
-  private apiUrl: string = "https://localhost:5133/api";
+  private apiUrl: string | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+    this.apiUrl = `${environment.API_ENDPOINT}/api`
+   }
 
   get(endpoint: string): Observable<any> {
     const url = `${this.apiUrl}/${endpoint}`;
