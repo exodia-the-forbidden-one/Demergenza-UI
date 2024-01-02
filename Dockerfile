@@ -1,6 +1,8 @@
-FROM node:20-alpine3.19 as build
+FROM node:latest as build
 
 WORKDIR /app
+
+RUN npm config set registry http://registry.npmjs.org/
 
 COPY package*.json .
 RUN npm install
@@ -19,11 +21,11 @@ FROM nginx
 
 COPY --from=build app/dist/pizza-demergenza-ui /usr/share/nginx/html
 
-# Creates ssl
+# Create ssl
 RUN mkdir -p /etc/nginx/ssl \
-    && openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-    -keyout /etc/nginx/ssl/ssl.key -out /etc/nginx/ssl/ssl.crt \
-    -subj "/C=TR/ST=TR/L=Bursa/O=demergenza/CN=demergenza.com"
+    && openssl req -newkey rsa:2048 -new -x509 -nodes -days 3650 \
+    -subj "/C=TR/L=Bursa/O=PizzaDemergenza/CN=Demergenza" \
+    -keyout /etc/nginx/ssl/key.pem -out /etc/nginx/ssl/cert.pem
 
 COPY nginx.conf /etc/nginx/nginx.conf
 
