@@ -5,7 +5,7 @@
       <ul>
         <i class="fa-solid fa-xmark" (click)="toggleNavbar()"></i>
         <li>
-          <a (click)="toggleNavbar()" [routerLink]="['home']" routerLinkActive="link-active">ANA SAYFA</a>
+          <a (click)="toggleNavbar()" [routerLink]="['./']" routerLinkActive="link-active" [routerLinkActiveOptions]= "{exact: true}">ANA SAYFA</a>
         </li>
         <li>
           <a (click)="toggleNavbar()" [routerLink]="['menu']" routerLinkActive="link-active">MENÜ</a>
