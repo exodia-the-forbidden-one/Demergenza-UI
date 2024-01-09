@@ -6,6 +6,7 @@ import { CarouselModule } from 'primeng/carousel';
 import { ButtonModule } from 'primeng/button';
 import { AnimateModule } from 'primeng/animate';
 import { ChipModule } from 'primeng/chip';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 import { HomeComponent } from './components/home/home.component';
 import { UiComponent } from './ui.component';
@@ -35,6 +36,7 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     ButtonModule,
     AnimateModule,
     ChipModule,
+    BreadcrumbModule,
     RouterModule.forChild([
       {
         path: '', children: [
