@@ -1,9 +1,28 @@
 section.about-us {
     padding-top: 160px;
-    background: url(../../../../assets/img/bg.jpg);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.689), rgba(0, 0, 0, 0.475)),
+        url('../../../../assets/img/bg-5.jpeg');
+    background-position: top center;
 }
 
-.about-us-wrapper{
+.about-us-wrapper {
     display: flex;
     flex-direction: column;
+}
+
+.au{
+    background: #FFFFF3;
+}
+
+@media(min-width: 500px) {
+    .au {
+        background: url('../../../../assets/img/bg-aboutus.jpg');
+        background-size: cover;
+        background-position: top;
+    }
+}
+
+
+::ng-deep .p-breadcrumb .p-menuitem-text {
+    color: #f1f1f1cc;
 }
