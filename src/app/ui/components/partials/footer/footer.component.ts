@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
@@ -6,11 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
+
+  /**
+   *
+   */
+  constructor(private router: Router) {
+
+  }
+
   ngOnInit(): void {
     this.responsiveFooter();
     window.addEventListener("resize", () => {
       this.responsiveFooter()
     })
+
+    // scroll to top when navigation
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0)
+    });
   }
 
   responsiveFooter(): void {
@@ -22,7 +39,7 @@ export class FooterComponent implements OnInit {
       menuGroup?.insertBefore(element!, menuGroup.firstChild)
     }
     else {
-footerMenu?.insertBefore(element!, footerMenu.firstChild )
+      footerMenu?.insertBefore(element!, footerMenu.firstChild)
     }
 
   }

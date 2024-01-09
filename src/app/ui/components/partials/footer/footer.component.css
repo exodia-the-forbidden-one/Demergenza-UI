@@ -1,6 +1,7 @@
 section.footer {
-  background: linear-gradient(#000000df, #333333dd),
-    url(../../../../../assets/img/bg-1.jpg);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.895), rgba(0, 0, 0, 0.681)),
+    url(../../../../../assets/img/bg-5.jpeg);
+  background-position: bottom;
   position: relative;
   bottom: 0;
   padding: 30px 0;
