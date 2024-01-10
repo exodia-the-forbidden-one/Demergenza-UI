@@ -6,7 +6,7 @@ services:
     build:
       context: .
       args:
-        - API_ENDPOINT
+        API_ENDPOINT: ${API_ENDPOINT:?err}
     ports:
       - 80:80
       - 443:443
